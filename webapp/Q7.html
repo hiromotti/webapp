@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+    </head>
+<body bgcolor="#00FF00">
+<script>
+function myCheck() {
+  var flag1 = false; // 選択されているか否かを判定する変数
+  var flag2 = false; 
+  var tile = [0,0,0,0,0,0,0,0,0]; //チェックした牌を格納する変数
+  var answer = [1,0,0,1,1,0,0,0,0]; //正解の牌を格納する変数
+  for (var i = 0; i < document.select.tile.length; i++) {
+    // i番目のチェックボックスがチェックされているかを判定
+    if (document.select.tile[i].checked) {
+      flag1 = true;
+      tile[i] = 1;
+    }
+  }
+    // 何も選択されていない場合の処理   
+  if (!flag1) {
+    alert("項目が選択されていません。");
+  }
+if(flag1 == true){
+  for (var i = 0; i < document.select.tile.length; i++) {
+    // 正解がチェックされているかを判定
+    if (tile[i] != answer[i] && flag2 == false) {
+        alert("間違いです。");
+        flag2 = true;
+    }
+  }
+}
+  if(flag2 ==false && flag1 == true){
+      alert("正解です。");
+  }
+}
+function Clear() {
+  for (var i=0;i<document.select.tile.length; i++) {
+      document.select.tile[i].checked = false;
+  }
+}
+
+
+</script>
+    <center>Q7</center>
+    <br>
+    <center>何待ち？</center>
+<br>
+<br>
+    <center><img src="./images/Q7.png"></center>
+<br>
+<br>
+<form name="select">
+<center>
+<label><input type="checkbox" name="tile" value="1"></label>
+<img src="./images/souzu/s1.png" alt="代替テキスト">
+<label><input type="checkbox" name="tile" value="2"></label>
+    <img src="./images/souzu/s2.png">
+<label><input type="checkbox" name="tile" value="3"></label>
+    <img src="./images/souzu/s3.png">
+<label><input type="checkbox" name="tile" value="4"></label>
+    <img src="./images/souzu/s4.png">
+<label><input type="checkbox" name="tile" value="5"></label>
+    <img src="./images/souzu/s5.png">
+<label><input type="checkbox" name="tile" value="6"></label>
+    <img src="./images/souzu/s6.png">
+<label><input type="checkbox" name="tile" value="7"></label>
+    <img src="./images/souzu/s7.png">
+<label><input type="checkbox" name="tile" value="8"></label>
+    <img src="./images/souzu/s8.png">
+<label><input type="checkbox" name="tile" value="9"></label>
+    <img src="./images/souzu/s9.png">
+</center>
+<br>
+<br>
+<center><input type="button" value="判定" onclick = "myCheck()" style="WIDTH: 100px; HEIGHT: 50px">
+    <input type="button" value="clear" onclick = "Clear()" style="WIDTH: 100px; HEIGHT: 50px"></center>
+    
+
+<br>
+<br>  
+     <div align="right">
+         <a href="Q8.html" accesskey="u">
+         <input type="button"value="next"style="WIDTH: 100px; HEIGHT: 50px">   
+         </a>
+    </div>
+</form>
+</body>
+</html>
